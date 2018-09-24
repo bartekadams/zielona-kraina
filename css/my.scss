@@ -1,0 +1,264 @@
+$gray-background-color: #f5f5f5;
+$description-list-term-width: 150px;
+$color-to-mix: rgb(18, 139, 77);
+
+$largeMonitorBreakpoint: 1200px;
+$smallMonitorBreakpoint: 992px;
+$mobileBreakpoint: 768px;
+
+
+.accordion-center {
+  width: 100%;
+  & .title {
+    text-align: center;
+  }
+}
+
+#news, #for-parents, #footer {
+  background: $gray-background-color;
+}
+
+// from here: http://www.the-art-of-web.com/css/format-dl/#section_2
+dt {
+  float: left;
+  clear: left;
+  width: $description-list-term-width;
+  text-align: right;
+  font-weight: bold;
+  color: green;
+  &:after {
+    content: ":  ";
+  }
+  @media screen and (max-width: $largeMonitorBreakpoint) {
+    float: none;
+    text-align: left;
+  }
+}
+dd {
+  margin: 0 0 0 ($description-list-term-width + 10px);
+  padding: 0 0 0.5em 0;
+  @media screen and (max-width: $largeMonitorBreakpoint) {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.gallery {
+  &-container {
+    -webkit-transition: background-color 0.2s;
+    &:hover {
+    transition: background-color 0.5s;
+      background-color: $color-to-mix;
+    }
+  }
+  &-image {
+    mix-blend-mode: multiply;
+    position: absolute;
+    z-index: 2;
+    &:hover {
+      z-index: 0;
+    }
+  }
+  &-text {
+    z-index: 1;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+#recipes {
+  //background-image: url('../img/recipe-baner.jpg');
+  //background-repeat: no-repeat;
+}
+
+.section {
+  margin-bottom: 30px;
+  &-header {
+    &-normal {
+      background-image: url('../img/section.jpg');
+    }
+    &-gray {
+      background-image: url('../img/section-gray.jpg');
+    }
+    &-recipes {
+      background-image: url('../img/section.png');
+    }
+    background-size: 100% 100%;
+    height: 125px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &-text {
+      top: 65px;
+      position: relative;
+    }
+  }
+}
+
+.hr {
+  &-1 {
+    height: 2px;
+    background-color: #018845;
+    position: relative;
+    top: 10px;
+  }
+  &-2 {
+    background-color: #80BD00;
+    height: 5px;
+  }
+  &-3 {
+    background-color: #018136;
+    height: 30px;
+  }
+}
+
+.mySlides {
+  display: none;
+}
+
+.flip-inverted:hover > * {
+  color: greenyellow !important;
+}
+
+#menu {
+  background-image: url('../img/top2.jpg');
+  background-size: 100% 100%;
+  height: 200px;
+  width: auto;
+  &-list {
+    top: 105px;
+    left: 20%;
+    position: absolute;
+  }
+  display: block;
+  @media screen and (max-width: $largeMonitorBreakpoint) {
+    display: none;
+  }
+}
+
+#menu-new {
+  display: none;
+  margin-bottom: 10px;
+  @media screen and (max-width: $largeMonitorBreakpoint) {
+    display: block;
+  }
+  .segment {
+    cursor: pointer;
+    &:hover {
+      color: blue;
+    }
+  }
+}
+
+//Sections:
+//menu
+//project-background
+//news
+//workshop-profile
+//gallery
+//recipes
+//for-parents
+//organizers
+
+.hidden-text {
+  margin-bottom: 25px;
+}
+
+#footer-image {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.three-column-table > *{
+  width: 33.33%;
+  padding: 30px !important;
+  font-weight: normal !important;
+}
+
+#for-parents {
+  padding-bottom: 30px;
+  &-table {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    & > tbody > tr > td {
+      border: 30px solid transparent !important;
+      padding: 5px !important;
+      border-image-source: url('../img/cross.png') !important;
+      border-image-width: 40px !important;
+      border-image-outset: 20px !important;
+    }
+  }
+  tr {
+    @media screen and (max-width: $smallMonitorBreakpoint) {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none !important;
+      webkit-box-shadow: 0 !important;
+      box-shadow: 0 0 !important;
+    }
+  }
+}
+
+#back-to-top-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  &:hover {
+    background-color: #555;
+  }
+}
+
+.news-img {
+  filter: sepia(0%);
+  -webkit-filter: sepia(0%);
+  -moz-filter: sepia(0%);
+  -o-filter: sepia(0%);
+  -ms-filter: sepia(0%);
+  -webkit-transition: filter 2s;
+}
+
+.news-img:hover {
+  transition: filter 0.5s;
+  filter: sepia(100%);
+  -webkit-filter: sepia(100%);
+  -moz-filter: sepia(100%);
+  -o-filter: sepia(100%);
+  -ms-filter: sepia(100%);
+}
+
+ #recipes-columns {
+   color: #ff69b4;
+   h5 {
+     color: white;
+     font-size: 1.3 rem;
+   }
+//   i {
+//     visibility: visible;
+//     @media screen and (max-width: $mobileBreakpoint) {
+//       font-size: 2em;
+//     }
+//   }
+//
+//   h5 {
+//     visibility: visible;
+//     @media screen and (max-width: $mobileBreakpoint) {
+//       font-size: 1rem;
+//     }
+//   }
+ }
